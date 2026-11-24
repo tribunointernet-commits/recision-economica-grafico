@@ -9,7 +9,27 @@
 <style>
 :root{--mint:#2ce0c6;--black:#050505;--white:#fff;--line:#333;--muted:#a8a8a8;--font:Arial,Helvetica,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#111;color:var(--white);font-family:var(--font);-webkit-font-smoothing:antialiased}main{max-width:1600px;margin:auto}.intro{padding:24px 5vw;background:#111;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}.intro h1{font-size:clamp(19px,2vw,30px);line-height:1.12;margin:0}.intro p{font-size:14px;color:#c8c8c8;margin:8px 0 0}.nav{display:flex;flex-wrap:wrap;gap:9px}.nav a{color:#fff;border:1px solid #555;text-decoration:none;padding:8px 11px;font-size:13px}.nav a:hover,.nav a:focus-visible{background:var(--mint);color:#000;border-color:var(--mint)}.chart-panel{display:grid;grid-template-columns:45% 55%;min-height:570px;border-top:12px solid #151515;scroll-margin-top:0}.editorial{background:var(--mint);color:#000;padding:clamp(28px,5.5vw,85px);display:flex;flex-direction:column;justify-content:space-between;gap:45px}.kicker{font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}.editorial h2{font-size:clamp(34px,4.6vw,77px);line-height:1.04;font-weight:400;letter-spacing:-.045em;margin:20px 0 22px;overflow-wrap:break-word}.period{font-size:clamp(16px,1.6vw,27px);margin:0}.editorial p{font-size:clamp(16px,1.55vw,23px);line-height:1.65;margin:0;max-width:590px}.figure{min-width:0;background:#000;display:flex;flex-direction:column;justify-content:center;padding:clamp(24px,3.4vw,55px);gap:16px}.figure h3{font-weight:400;font-size:clamp(18px,1.8vw,27px);margin:0;line-height:1.25}.figure .sub{font-size:13px;color:#d1d1d1;line-height:1.45;margin:0}.viz{width:100%;min-width:0}.viz svg{display:block;width:100%;height:auto;overflow:visible;font-family:var(--font)}.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:13px}.legend span{display:inline-flex;align-items:center;gap:7px}.dot{width:12px;height:12px;display:inline-block;border-radius:50%;background:var(--mint)}.dot.white{background:#fff}.source{color:#bababa;font-size:12px;line-height:1.5;border-top:1px solid #303030;padding-top:13px}.source strong{color:#fff}.source a{color:var(--mint)}.smallnote{font-size:12px;color:#bbb;line-height:1.45}.read-data{font-size:12px;color:#ddd}.read-data summary{cursor:pointer;padding:8px 0}.read-data table{border-collapse:collapse;width:100%;font-size:12px}.read-data th,.read-data td{padding:7px 4px;border-bottom:1px solid #333;text-align:left}.read-data td:last-child{text-align:right}.number{font-weight:bold;white-space:nowrap}.footer{padding:30px 5vw 45px;line-height:1.5;color:#bbb;font-size:13px}.footer a{color:var(--mint)}.graph-hide{display:none!important}
-@media(max-width:900px){.chart-panel{grid-template-columns:1fr;min-height:0}.editorial{padding:clamp(24px,6vw,44px);gap:30px}.editorial h2{font-size:clamp(37px,9vw,64px);max-width:680px}.editorial p{font-size:clamp(16px,3vw,21px);max-width:720px}.figure{padding:clamp(20px,5vw,36px)}.intro{padding:18px 5vw}.figure h3{font-size:22px}}@media(max-width:480px){.chart-panel{border-top-width:9px}.editorial{gap:22px}.editorial h2{margin:14px 0;font-size:clamp(34px,10vw,50px)}.editorial p{line-height:1.5}.figure{gap:12px}.figure h3{font-size:19px}.smallnote,.source{font-size:11px}.nav a{font-size:12px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* El iframe se adapta a su ancho: sin scroll interno ni dimensión fija. */
+html.embed-mode{scroll-behavior:auto;overflow-x:hidden}
+html.embed-mode,html.embed-mode body{width:100%;min-width:0;overflow-x:hidden}
+html.embed-mode body{background:transparent}
+html.embed-mode main{max-width:none;width:100%}
+html.embed-mode .chart-panel{border-top:0}
+html.embed-mode .editorial h2{overflow-wrap:anywhere}
+html.embed-mode .figure{overflow:hidden}
+html.embed-mode .viz svg{max-width:100%}
+
+@media(max-width:900px){.chart-panel{grid-template-columns:1fr;min-height:0}.editorial{padding:clamp(24px,6vw,44px);gap:30px}.editorial h2{font-size:clamp(37px,9vw,64px);max-width:680px}.editorial p{font-size:clamp(16px,3vw,21px);max-width:720px}.figure{padding:clamp(20px,5vw,36px)}.intro{padding:18px 5vw}.figure h3{font-size:22px}}@media(max-width:480px){.chart-panel{border-top-width:9px}.editorial{gap:22px}.editorial h2{margin:14px 0;font-size:clamp(34px,10vw,50px)}.editorial p{line-height:1.5}.figure{gap:12px}.figure h3{font-size:19px}.smallnote,.source{font-size:11px}.nav a{font-size:12px}}@media(max-width:580px){
+  html.embed-mode .editorial{padding:22px 20px;gap:20px}
+  html.embed-mode .editorial h2{font-size:clamp(30px,8.5vw,44px);line-height:1.06}
+  html.embed-mode .editorial p{font-size:16px;line-height:1.5}
+  html.embed-mode .figure{padding:22px 14px;gap:13px}
+  html.embed-mode .figure h3{font-size:19px}
+  html.embed-mode .figure .sub{font-size:12px}
+  html.embed-mode .legend{gap:12px;font-size:12px}
+  html.embed-mode .read-data table{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -37,7 +57,71 @@ function drawSectors(){const w=740,h=1050;const labelX=2,labelWidth=270,zero=590
 function tables(node,data){document.getElementById(node).innerHTML=data.map(([a,b])=>`<tr><td>${esc(a)}</td><td>${b>0?'+':''}${fmt(b)}%</td></tr>`).join('')}
 drawQuarter();drawDivergingColumns('vis2',monthlyYoY,-3,7.5);drawSectors();drawDivergingColumns('vis4',changeMoM,-3,1.8);tables('data2',monthlyYoY);tables('data3',sectors);tables('data4',changeMoM);
 // Enlaces individuales para incrustar: index.html?grafico=1, ... ?grafico=4
-const requested=new URLSearchParams(location.search).get('grafico');if(['1','2','3','4'].includes(requested)){document.querySelectorAll('.chart-panel').forEach(section=>{if(section.id!==`grafico-${requested}`)section.classList.add('graph-hide')});document.querySelector('.intro').classList.add('graph-hide');document.querySelector('.footer').classList.add('graph-hide');document.body.style.background='#000'}
+const requested=new URLSearchParams(location.search).get('grafico');
+const embedMode=['1','2','3','4'].includes(requested);
+if(embedMode){
+  document.documentElement.classList.add('embed-mode');
+  document.querySelectorAll('.chart-panel').forEach(section=>{
+    if(section.id!==`grafico-${requested}`)section.classList.add('graph-hide');
+  });
+  document.querySelector('.intro').classList.add('graph-hide');
+  document.querySelector('.footer').classList.add('graph-hide');
+}
+
+/*
+ * Mensaje de altura para una web anfitriona (por ejemplo, el CMS de El Tribuno).
+ * Este código no puede redimensionar por sí solo el iframe de otro dominio:
+ * la página anfitriona debe escuchar el mensaje y cambiar su altura.
+ */
+if(embedMode && window.parent !== window){
+  const panel=document.getElementById(`grafico-${requested}`);
+  let lastHeight=0;
+  let pending=false;
+  function sendHeight(){
+    pending=false;
+    // El alto del panel incluye los gráficos SVG, texto, tablas abiertas y pie.
+    const height=Math.ceil(Math.max(
+      panel.getBoundingClientRect().height,
+      panel.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight
+    ));
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      // No se transmite información privada; el dominio padre puede variar.
+      window.parent.postMessage({
+        type:'eltribuno:chart-height',
+        chartId:requested,
+        height
+      },'*');
+    }
+  }
+  function scheduleHeight(){
+    if(pending)return;
+    pending=true;
+    requestAnimationFrame(sendHeight);
+  }
+  if('ResizeObserver' in window){
+    const ro=new ResizeObserver(scheduleHeight);
+    ro.observe(panel);
+    ro.observe(document.documentElement);
+  }
+  window.addEventListener('resize',scheduleHeight,{passive:true});
+  window.addEventListener('load',scheduleHeight);
+  panel.addEventListener('toggle',scheduleHeight,true);
+  document.querySelectorAll('details').forEach(el=>el.addEventListener('toggle',scheduleHeight));
+  if(document.fonts?.ready){document.fonts.ready.then(scheduleHeight)}
+  // Reintento al recibir una solicitud del padre tras iniciar el iframe.
+  window.addEventListener('message',event=>{
+    if(event.source===window.parent && event.data?.type==='eltribuno:request-height'){
+      lastHeight=0;
+      scheduleHeight();
+    }
+  });
+  scheduleHeight();
+  requestAnimationFrame(()=>requestAnimationFrame(scheduleHeight));
+}
+
 </script>
 </body>
 </html>
